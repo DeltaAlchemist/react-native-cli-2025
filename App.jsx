@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import globalStyle from './assets/styles/globalStyle';
+import { scaleFontSize } from './assets/styles/scaling';
 import Title from './components/Title/Title';
 import UserPost from './components/UserPost/UserPost';
 import UserStory from './components/UserStory/UserStory';
@@ -180,7 +181,7 @@ const App = () => {
                 <TouchableOpacity style={globalStyle.messageIcon}>
                   <FontAwesomeIcon
                     icon={faEnvelope}
-                    size={20}
+                    size={scaleFontSize(20)}
                     color={'#898DAE'}
                   />
                   <View style={globalStyle.messageNumberContainer}>

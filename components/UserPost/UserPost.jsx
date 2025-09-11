@@ -7,10 +7,11 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import PropTypes from 'prop-types';
 import { Image, Text, View } from 'react-native';
+import { horizontalScale, scaleFontSize } from '../../assets/styles/scaling';
 import UserProfileImage from '../UserProfileImage/UserProfileImage';
 import style from './style';
 
-const PROFILE_IMAGE_DIMENSIONS = 48;
+const PROFILE_IMAGE_DIMENSIONS = horizontalScale(48);
 
 const UserPost = ({
   firstName,
@@ -38,22 +39,26 @@ const UserPost = ({
             {location && <Text style={style.location}>{location}</Text>}
           </View>
         </View>
-        <FontAwesomeIcon icon={faEllipsisH} size={20} color={'#79869F'} />
+        <FontAwesomeIcon
+          icon={faEllipsisH}
+          size={scaleFontSize(20)}
+          color={style.colors.grayishBlue}
+        />
       </View>
       <View style={style.postImage}>
         <Image source={image} />
       </View>
       <View style={style.userPostStats}>
         <View style={style.userPostStatsButton}>
-          <FontAwesomeIcon icon={faHeart} color={style.grayishBlue} />
+          <FontAwesomeIcon icon={faHeart} color={style.colors.grayishBlue} />
           <Text style={style.userPostStatsText}>{likes}</Text>
         </View>
         <View style={style.userPostStatsButtonRight}>
-          <FontAwesomeIcon icon={faMessage} color={style.grayishBlue} />
+          <FontAwesomeIcon icon={faMessage} color={style.colors.grayishBlue} />
           <Text style={style.userPostStatsText}>{comments}</Text>
         </View>
         <View style={style.userPostStatsButtonRight}>
-          <FontAwesomeIcon icon={faBookmark} color={style.grayishBlue} />
+          <FontAwesomeIcon icon={faBookmark} color={style.colors.grayishBlue} />
           <Text style={style.userPostStatsText}>{bookmarks}</Text>
         </View>
       </View>
